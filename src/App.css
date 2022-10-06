@@ -1,0 +1,10 @@
+body {
+  font-family: "Telefonica";
+  margin: 0px;
+}
+
+@font-face {
+  font-family: "Telefonica";
+  src: local("Telefonica"),
+    url("./fonts/Telefonica_Sans_Regular.woff2") format("woff2");
+}

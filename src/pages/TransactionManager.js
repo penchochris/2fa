@@ -17,13 +17,13 @@ export const TransactionManager = () => {
 
   useEffect(() => {
     axios
-      .get(`http://kandolab.com:8989/api/v1/operation/${id}`)
+      .get(`https://tt.kandolab.com/api/2fa/v1/operation/${id}`)
       .then(({ data: { info } }) => setText(info));
   }, [id]);
 
   const handleAccept = useCallback(() => {
     axios
-      .put(`http://kandolab.com:8989/api/v1/operation/validate/${id}`, {
+      .put(`https://tt.kandolab.com/api/2fa/v1/operation/validate/${id}`, {
         token: id,
         accept: true,
       })
@@ -36,7 +36,7 @@ export const TransactionManager = () => {
   }, [id, navigate]);
 
   const handleReject = useCallback(() => {
-    axios.put(`http://kandolab.com:8989/api/v1/operation/validate/${id}`, {
+    axios.put(`https://tt.kandolab.com/api/2fa/v1/operation/validate/${id}`, {
       token: id,
       accept: false,
     });

@@ -20,7 +20,7 @@ export const WalletAssociation = () => {
 
   useEffect(() => {
     axios
-      .get(`http://kandolab.com:8989/api/v1/user/1`)
+      .get(`https://tt.kandolab.com/api/2fa/v1/user/1`)
       .then(({ data }) => setUser(data));
   }, []);
 
@@ -58,7 +58,7 @@ export const WalletAssociation = () => {
         await coffeeTxn.wait();
 
         buyMeACoffee.on("NewMemo", (address) => {
-          axios.put("http://kandolab.com:8989/api/v1/user/pair", {
+          axios.put("https://tt.kandolab.com/api/2fa/v1/user/pair", {
             wallet_id: address,
           });
           navigate(routes.walletAssociationOK)
